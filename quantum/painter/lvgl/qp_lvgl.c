@@ -17,7 +17,7 @@ static deferred_executor_t lvgl_executors[2] = {0}; // For lv_tick_inc and lv_ta
 static lvgl_state_t        lvgl_states[2]    = {0}; // For lv_tick_inc and lv_task_handler
 
 painter_device_t selected_display = NULL;
-void *           color_buffer     = NULL;
+void            *color_buffer     = NULL;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Quantum Painter LVGL Integration Internal: qp_lvgl_flush
@@ -33,7 +33,7 @@ void qp_lvgl_flush(lv_disp_drv_t *disp, const lv_area_t *area, lv_color_t *color
 }
 
 static uint32_t tick_task_callback(uint32_t trigger_time, void *cb_arg) {
-    lvgl_state_t *  state     = (lvgl_state_t *)cb_arg;
+    lvgl_state_t   *state     = (lvgl_state_t *)cb_arg;
     static uint32_t last_tick = 0;
     switch (state->fnc_id) {
         case 0: {

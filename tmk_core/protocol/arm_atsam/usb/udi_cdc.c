@@ -271,15 +271,15 @@ bool udi_cdc_comm_enable(void) {
     uint8_t port;
     uint8_t iface_comm_num;
 
-    //#if UDI_CDC_PORT_NB == 1 // To optimize code
+    // #if UDI_CDC_PORT_NB == 1 // To optimize code
     port                    = 0;
     udi_cdc_nb_comm_enabled = 0;
-    //#else
-    //    if (udi_cdc_nb_comm_enabled > UDI_CDC_PORT_NB) {
-    //        udi_cdc_nb_comm_enabled = 0;
-    //    }
-    //    port = udi_cdc_nb_comm_enabled;
-    //#endif
+    // #else
+    //     if (udi_cdc_nb_comm_enabled > UDI_CDC_PORT_NB) {
+    //         udi_cdc_nb_comm_enabled = 0;
+    //     }
+    //     port = udi_cdc_nb_comm_enabled;
+    // #endif
 
     // Initialize control signal management
     udi_cdc_state[port] = CPU_TO_LE16(0);
@@ -326,15 +326,15 @@ bool udi_cdc_comm_enable(void) {
 bool udi_cdc_data_enable(void) {
     uint8_t port;
 
-    //#if UDI_CDC_PORT_NB == 1 // To optimize code
+    // #if UDI_CDC_PORT_NB == 1 // To optimize code
     port                    = 0;
     udi_cdc_nb_data_enabled = 0;
-    //#else
-    //    if (udi_cdc_nb_data_enabled > UDI_CDC_PORT_NB) {
-    //        udi_cdc_nb_data_enabled = 0;
-    //    }
-    //    port = udi_cdc_nb_data_enabled;
-    //#endif
+    // #else
+    //     if (udi_cdc_nb_data_enabled > UDI_CDC_PORT_NB) {
+    //         udi_cdc_nb_data_enabled = 0;
+    //     }
+    //     port = udi_cdc_nb_data_enabled;
+    // #endif
 
     // Initialize TX management
     udi_cdc_tx_trans_ongoing[port]    = false;
@@ -478,9 +478,9 @@ static void udi_cdc_ctrl_state_change(uint8_t port, bool b_set, le16_t bit_mask)
     udd_ep_id_t ep_comm;
     uint32_t    irqflags; // irqflags_t
 
-    //#if UDI_CDC_PORT_NB == 1 // To optimize code
+    // #if UDI_CDC_PORT_NB == 1 // To optimize code
     port = 0;
-    //#endif
+    // #endif
 
     // Update state
     irqflags = __get_PRIMASK();
@@ -566,9 +566,9 @@ static bool udi_cdc_rx_start(uint8_t port) {
     uint8_t     buf_sel_trans;
     udd_ep_id_t ep;
 
-    //#if UDI_CDC_PORT_NB == 1 // To optimize code
+    // #if UDI_CDC_PORT_NB == 1 // To optimize code
     port = 0;
-    //#endif
+    // #endif
 
     irqflags = __get_PRIMASK();
     __disable_irq();
@@ -691,9 +691,9 @@ static void udi_cdc_tx_send(uint8_t port) {
     udd_ep_id_t     ep;
     static uint16_t sof_zlp_counter = 0;
 
-    //#if UDI_CDC_PORT_NB == 1 // To optimize code
+    // #if UDI_CDC_PORT_NB == 1 // To optimize code
     port = 0;
-    //#endif
+    // #endif
 
     if (udi_cdc_tx_trans_ongoing[port]) {
         return; // Already on going or wait next SOF to send next data
@@ -813,9 +813,9 @@ iram_size_t udi_cdc_multi_get_nb_received_data(uint8_t port) {
     uint16_t    pos;
     iram_size_t nb_received;
 
-    //#if UDI_CDC_PORT_NB == 1 // To optimize code
+    // #if UDI_CDC_PORT_NB == 1 // To optimize code
     port = 0;
-    //#endif
+    // #endif
 
     irqflags = __get_PRIMASK();
     __disable_irq();
@@ -847,9 +847,9 @@ int udi_cdc_multi_getc(uint8_t port) {
     uint8_t  buf_sel;
     bool     again;
 
-    //#if UDI_CDC_PORT_NB == 1 // To optimize code
+    // #if UDI_CDC_PORT_NB == 1 // To optimize code
     port = 0;
-    //#endif
+    // #endif
 
     b_databit_9 = (9 == udi_cdc_line_coding[port].bDataBits);
 
@@ -891,15 +891,15 @@ int udi_cdc_getc(void) {
 
 iram_size_t udi_cdc_multi_read_buf(uint8_t port, void *buf, iram_size_t size) {
     uint32_t    irqflags; // irqflags_t
-    uint8_t *   ptr_buf = (uint8_t *)buf;
+    uint8_t    *ptr_buf = (uint8_t *)buf;
     iram_size_t copy_nb;
     uint16_t    pos;
     uint8_t     buf_sel;
     bool        again;
 
-    //#if UDI_CDC_PORT_NB == 1 // To optimize code
+    // #if UDI_CDC_PORT_NB == 1 // To optimize code
     port = 0;
-    //#endif
+    // #endif
 
 udi_cdc_read_buf_loop_wait:
     // Check available data
@@ -936,15 +936,15 @@ udi_cdc_read_buf_loop_wait:
 }
 
 static iram_size_t udi_cdc_multi_read_no_polling(uint8_t port, void *buf, iram_size_t size) {
-    uint8_t *   ptr_buf = (uint8_t *)buf;
+    uint8_t    *ptr_buf = (uint8_t *)buf;
     iram_size_t nb_avail_data;
     uint16_t    pos;
     uint8_t     buf_sel;
     uint32_t    irqflags; // irqflags_t
 
-    //#if UDI_CDC_PORT_NB == 1 // To optimize code
+    // #if UDI_CDC_PORT_NB == 1 // To optimize code
     port = 0;
-    //#endif
+    // #endif
 
     // Data interface not started... exit
     if (!udi_cdc_data_running) {
@@ -993,9 +993,9 @@ iram_size_t udi_cdc_multi_get_free_tx_buffer(uint8_t port) {
     iram_size_t buf_sel_nb, retval;
     uint8_t     buf_sel;
 
-    //#if UDI_CDC_PORT_NB == 1 // To optimize code
+    // #if UDI_CDC_PORT_NB == 1 // To optimize code
     port = 0;
-    //#endif
+    // #endif
 
     irqflags = __get_PRIMASK();
     __disable_irq();
@@ -1035,9 +1035,9 @@ int udi_cdc_multi_putc(uint8_t port, int value) {
     bool     b_databit_9;
     uint8_t  buf_sel;
 
-    //#if UDI_CDC_PORT_NB == 1 // To optimize code
+    // #if UDI_CDC_PORT_NB == 1 // To optimize code
     port = 0;
-    //#endif
+    // #endif
 
     b_databit_9 = (9 == udi_cdc_line_coding[port].bDataBits);
 
@@ -1077,11 +1077,11 @@ iram_size_t udi_cdc_multi_write_buf(uint8_t port, const void *buf, iram_size_t s
     uint8_t     buf_sel;
     uint16_t    buf_nb;
     iram_size_t copy_nb;
-    uint8_t *   ptr_buf = (uint8_t *)buf;
+    uint8_t    *ptr_buf = (uint8_t *)buf;
 
-    //#if UDI_CDC_PORT_NB == 1 // To optimize code
+    // #if UDI_CDC_PORT_NB == 1 // To optimize code
     port = 0;
-    //#endif
+    // #endif
 
     if (9 == udi_cdc_line_coding[port].bDataBits) {
         size *= 2;
@@ -1140,7 +1140,7 @@ void CDC_send(void) {
 
 uint32_t CDC_print(char *printbuf) {
     uint32_t count = 0;
-    char *   buf   = printbuf;
+    char    *buf   = printbuf;
     char     c;
 
     if (timer_read64() < 5000) return 0;

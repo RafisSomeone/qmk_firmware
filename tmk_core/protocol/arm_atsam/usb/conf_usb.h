@@ -79,13 +79,13 @@
  * @{
  */
 //! To define a Low speed device
-//#define  USB_DEVICE_LOW_SPEED
+// #define  USB_DEVICE_LOW_SPEED
 
 //! To authorize the High speed
 #if (UC3A3 || UC3A4)
-//#define  USB_DEVICE_HS_SUPPORT
+// #define  USB_DEVICE_HS_SUPPORT
 #elif (SAM3XA || SAM3U)
-//#define  USB_DEVICE_HS_SUPPORT
+// #define  USB_DEVICE_HS_SUPPORT
 #endif
 //@}
 
@@ -118,12 +118,12 @@
 //! Interface callback definition
 #define UDI_HID_KBD_ENABLE_EXT() main_kbd_enable()
 #define UDI_HID_KBD_DISABLE_EXT() main_kbd_disable()
-//#define UDI_HID_KBD_CHANGE_LED(value) ui_kbd_led(value)
+// #define UDI_HID_KBD_CHANGE_LED(value) ui_kbd_led(value)
 
 #ifdef NKRO_ENABLE
 #    define UDI_HID_NKRO_ENABLE_EXT() main_nkro_enable()
 #    define UDI_HID_NKRO_DISABLE_EXT() main_nkro_disable()
-//#define UDI_HID_NKRO_CHANGE_LED(value) ui_kbd_led(value)
+// #define UDI_HID_NKRO_CHANGE_LED(value) ui_kbd_led(value)
 #endif
 
 #ifdef EXTRAKEY_ENABLE

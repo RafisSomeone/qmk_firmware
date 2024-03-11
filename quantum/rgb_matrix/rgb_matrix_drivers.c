@@ -280,9 +280,9 @@ static void flush(void) {
 }
 
 const rgb_matrix_driver_t rgb_matrix_driver = {
-    .init = init,
-    .flush = flush,
-    .set_color = IS31FL3733_set_color,
+    .init          = init,
+    .flush         = flush,
+    .set_color     = IS31FL3733_set_color,
     .set_color_all = IS31FL3733_set_color_all,
 };
 
@@ -301,9 +301,9 @@ static void flush(void) {
 }
 
 const rgb_matrix_driver_t rgb_matrix_driver = {
-    .init = init,
-    .flush = flush,
-    .set_color = IS31FL3736_set_color,
+    .init          = init,
+    .flush         = flush,
+    .set_color     = IS31FL3736_set_color,
     .set_color_all = IS31FL3736_set_color_all,
 };
 
@@ -322,9 +322,9 @@ static void flush(void) {
 }
 
 const rgb_matrix_driver_t rgb_matrix_driver = {
-    .init = init,
-    .flush = flush,
-    .set_color = IS31FL3737_set_color,
+    .init          = init,
+    .flush         = flush,
+    .set_color     = IS31FL3737_set_color,
     .set_color_all = IS31FL3737_set_color_all,
 };
 
@@ -343,9 +343,9 @@ static void flush(void) {
 }
 
 const rgb_matrix_driver_t rgb_matrix_driver = {
-    .init = init,
-    .flush = flush,
-    .set_color = IS31FL3741_set_color,
+    .init          = init,
+    .flush         = flush,
+    .set_color     = IS31FL3741_set_color,
     .set_color_all = IS31FL3741_set_color_all,
 };
 
@@ -364,9 +364,9 @@ static void flush(void) {
 }
 
 const rgb_matrix_driver_t rgb_matrix_driver = {
-    .init = init,
-    .flush = flush,
-    .set_color = IS31FL_RGB_set_color,
+    .init          = init,
+    .flush         = flush,
+    .set_color     = IS31FL_RGB_set_color,
     .set_color_all = IS31FL_RGB_set_color_all,
 };
 
@@ -385,9 +385,9 @@ static void flush(void) {
 }
 
 const rgb_matrix_driver_t rgb_matrix_driver = {
-    .init = init,
-    .flush = flush,
-    .set_color = CKLED2001_set_color,
+    .init          = init,
+    .flush         = flush,
+    .set_color     = CKLED2001_set_color,
     .set_color_all = CKLED2001_set_color_all,
 };
 #    endif

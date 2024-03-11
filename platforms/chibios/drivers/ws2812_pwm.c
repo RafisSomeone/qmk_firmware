@@ -71,7 +71,7 @@
 #endif
 
 #ifndef WS2812_PWM_TARGET_PERIOD
-//#    define WS2812_PWM_TARGET_PERIOD 800000 // Original code is 800k...?
+// #    define WS2812_PWM_TARGET_PERIOD 800000 // Original code is 800k...?
 #    define WS2812_PWM_TARGET_PERIOD 80000 // TODO: work out why 10x less on f303/f4x1
 #endif
 
@@ -311,7 +311,7 @@ void ws2812_init(void) {
     palSetLineMode(WS2812_DI_PIN, WS2812_OUTPUT_MODE);
 
     // PWM Configuration
-    //#pragma GCC diagnostic ignored "-Woverride-init"  // Turn off override-init warning for this struct. We use the overriding ability to set a "default" channel config
+    // #pragma GCC diagnostic ignored "-Woverride-init"  // Turn off override-init warning for this struct. We use the overriding ability to set a "default" channel config
     static const PWMConfig ws2812_pwm_config = {
         .frequency = WS2812_PWM_FREQUENCY,
         .period    = WS2812_PWM_PERIOD, // Mit dieser Periode wird UDE-Event erzeugt und ein neuer Wert (Länge WS2812_BIT_N) vom DMA ins CCR geschrieben
@@ -324,7 +324,7 @@ void ws2812_init(void) {
         .cr2  = 0,
         .dier = TIM_DIER_UDE, // DMA on update event for next period
     };
-    //#pragma GCC diagnostic pop  // Restore command-line warning options
+    // #pragma GCC diagnostic pop  // Restore command-line warning options
 
     // Configure DMA
     // dmaInit(); // Joe added this

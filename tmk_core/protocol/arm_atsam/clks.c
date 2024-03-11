@@ -32,7 +32,7 @@ const uint8_t  sercom_pchan[]   = {7, 8, 23, 24, 34, 35};
 
 void CLK_oscctrl_init(void) {
     Oscctrl *posctrl = OSCCTRL;
-    Gclk *   pgclk   = GCLK;
+    Gclk    *pgclk   = GCLK;
 
     DBGC(DC_CLK_OSC_INIT_BEGIN);
 
@@ -127,7 +127,7 @@ uint32_t CLK_set_gclk_freq(uint8_t gclkn, uint32_t freq) {
 
 void CLK_init_osc(void) {
     uint8_t gclkn = GEN_OSC0;
-    Gclk *  pgclk = GCLK;
+    Gclk   *pgclk = GCLK;
 
     DBGC(DC_CLK_INIT_OSC_BEGIN);
 
@@ -196,10 +196,10 @@ void TC4_Handler() {
 }
 
 uint32_t CLK_enable_timebase(void) {
-    Gclk * pgclk  = GCLK;
-    Mclk * pmclk  = MCLK;
-    Tc *   ptc4   = TC4;
-    Tc *   ptc0   = TC0;
+    Gclk  *pgclk  = GCLK;
+    Mclk  *pmclk  = MCLK;
+    Tc    *ptc4   = TC4;
+    Tc    *ptc0   = TC0;
     Evsys *pevsys = EVSYS;
 
     DBGC(DC_CLK_ENABLE_TIMEBASE_BEGIN);
@@ -345,7 +345,7 @@ void clk_enable_sercom_apbmask(int sercomn) {
 uint32_t CLK_set_spi_freq(uint8_t sercomn, uint32_t freq) {
     DBGC(DC_CLK_SET_SPI_FREQ_BEGIN);
 
-    Gclk *  pgclk   = GCLK;
+    Gclk   *pgclk   = GCLK;
     Sercom *psercom = (Sercom *)sercom_apbbase[sercomn];
     clk_enable_sercom_apbmask(sercomn);
 
@@ -373,7 +373,7 @@ uint32_t CLK_set_spi_freq(uint8_t sercomn, uint32_t freq) {
 uint32_t CLK_set_i2c0_freq(uint8_t sercomn, uint32_t freq) {
     DBGC(DC_CLK_SET_I2C0_FREQ_BEGIN);
 
-    Gclk *  pgclk   = GCLK;
+    Gclk   *pgclk   = GCLK;
     Sercom *psercom = (Sercom *)sercom_apbbase[sercomn];
     clk_enable_sercom_apbmask(sercomn);
 
@@ -401,7 +401,7 @@ uint32_t CLK_set_i2c0_freq(uint8_t sercomn, uint32_t freq) {
 uint32_t CLK_set_i2c1_freq(uint8_t sercomn, uint32_t freq) {
     DBGC(DC_CLK_SET_I2C1_FREQ_BEGIN);
 
-    Gclk *  pgclk   = GCLK;
+    Gclk   *pgclk   = GCLK;
     Sercom *psercom = (Sercom *)sercom_apbbase[sercomn];
     clk_enable_sercom_apbmask(sercomn);
 

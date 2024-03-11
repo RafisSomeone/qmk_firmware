@@ -15,7 +15,7 @@ static flash_sector_t first_sector = UINT16_MAX;
 #endif // defined(WEAR_LEVELING_EFL_FIRST_SECTOR)
 
 static flash_sector_t sector_count = UINT16_MAX;
-static BaseFlash *    flash;
+static BaseFlash     *flash;
 
 // "Automatic" detection of the flash size -- ideally ChibiOS would have this already, but alas, it doesn't.
 static inline uint32_t detect_flash_size(void) {

@@ -461,7 +461,7 @@ void backlight_init_ports(void) {
 #    endif
     ICRx = BACKLIGHT_CUSTOM_RESOLUTION;
 #else
-    ICRx = TIMER_TOP;
+    ICRx   = TIMER_TOP;
 #endif
 
     backlight_init();

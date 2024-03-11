@@ -37,7 +37,7 @@
 #endif /* NO_DEBUG */
 
 __attribute__((aligned(4))) static uint8_t buffer[EEPROM_SIZE] = {0};
-volatile uint8_t *                         SmartEEPROM8        = (uint8_t *)SEEPROM_ADDR;
+volatile uint8_t                          *SmartEEPROM8        = (uint8_t *)SEEPROM_ADDR;
 
 static inline bool eeprom_is_busy(void) {
     int timeout = BUSY_RETRIES;
@@ -124,7 +124,7 @@ uint32_t eeprom_read_dword(const uint32_t *addr) {
 
 void eeprom_read_block(void *buf, const void *addr, size_t len) {
     const uint8_t *p    = (const uint8_t *)addr;
-    uint8_t *      dest = (uint8_t *)buf;
+    uint8_t       *dest = (uint8_t *)buf;
     while (len--) {
         *dest++ = eeprom_read_byte(p++);
     }
@@ -145,7 +145,7 @@ void eeprom_write_dword(uint32_t *addr, uint32_t value) {
 }
 
 void eeprom_write_block(const void *buf, void *addr, size_t len) {
-    uint8_t *      p   = (uint8_t *)addr;
+    uint8_t       *p   = (uint8_t *)addr;
     const uint8_t *src = (const uint8_t *)buf;
     while (len--) {
         eeprom_write_byte(p++, *src++);
@@ -171,7 +171,7 @@ void eeprom_update_dword(uint32_t *addr, uint32_t value) {
 }
 
 void eeprom_update_block(const void *buf, void *addr, size_t len) {
-    uint8_t *      p   = (uint8_t *)addr;
+    uint8_t       *p   = (uint8_t *)addr;
     const uint8_t *src = (const uint8_t *)buf;
     while (len--) {
         eeprom_write_byte(p++, *src++);

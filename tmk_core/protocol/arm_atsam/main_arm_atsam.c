@@ -148,7 +148,7 @@ void main_subtask_console_flush(void) {
 
     uint16_t result = console_printbuf_len;
     uint32_t irqflags;
-    char *   pconbuf  = console_printbuf; // Pointer to start send from
+    char    *pconbuf  = console_printbuf; // Pointer to start send from
     int      send_out = CONSOLE_EPSIZE;   // Bytes to send per transfer
 
     while (result > 0) { // While not error and bytes remain

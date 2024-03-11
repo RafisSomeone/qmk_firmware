@@ -219,8 +219,8 @@ void IS31FL_simple_set_scaling_buffer(uint8_t index, bool value) {
 
 void IS31FL_simple_set_brightness(int index, uint8_t value) {
     if (index >= 0 && index < LED_MATRIX_LED_COUNT) {
-        is31_led led = g_is31_leds[index];
-        g_pwm_buffer[led.driver][led.v] = value;
+        is31_led led                             = g_is31_leds[index];
+        g_pwm_buffer[led.driver][led.v]          = value;
         g_pwm_buffer_update_required[led.driver] = true;
     }
 }

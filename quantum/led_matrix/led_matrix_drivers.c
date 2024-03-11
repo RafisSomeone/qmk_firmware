@@ -197,9 +197,9 @@ static void flush(void) {
 }
 
 const led_matrix_driver_t led_matrix_driver = {
-    .init = init,
-    .flush = flush,
-    .set_value = IS31FL3733_set_value,
+    .init          = init,
+    .flush         = flush,
+    .set_value     = IS31FL3733_set_value,
     .set_value_all = IS31FL3733_set_value_all,
 };
 
@@ -218,9 +218,9 @@ static void flush(void) {
 }
 
 const led_matrix_driver_t led_matrix_driver = {
-    .init = init,
-    .flush = flush,
-    .set_value = IS31FL_simple_set_brightness,
+    .init          = init,
+    .flush         = flush,
+    .set_value     = IS31FL_simple_set_brightness,
     .set_value_all = IS31FL_simple_set_brigntness_all,
 };
 #    elif defined(CKLED2001)
@@ -238,9 +238,9 @@ static void flush(void) {
 }
 
 const led_matrix_driver_t led_matrix_driver = {
-    .init = init,
-    .flush = flush,
-    .set_value = CKLED2001_set_value,
+    .init          = init,
+    .flush         = flush,
+    .set_value     = CKLED2001_set_value,
     .set_value_all = CKLED2001_set_value_all,
 };
 #    endif

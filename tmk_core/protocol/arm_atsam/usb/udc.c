@@ -800,7 +800,7 @@ static bool udc_req_std_dev_set_configuration(void) {
  * \return true if success
  */
 static bool udc_req_std_iface_get_setting(void) {
-    uint8_t   iface_num;
+    uint8_t                     iface_num;
     udi_api_t UDC_DESC_STORAGE *udi_api;
 
     if (udd_g_ctrlreq.req.wLength != 1) {
@@ -957,7 +957,7 @@ static bool udc_reqstd(void) {
  * \return true if the request is supported
  */
 static bool udc_req_iface(void) {
-    uint8_t   iface_num;
+    uint8_t                     iface_num;
     udi_api_t UDC_DESC_STORAGE *udi_api;
 
     if (0 == udc_num_configuration) {
@@ -991,7 +991,7 @@ static bool udc_req_iface(void) {
  * \return true if the request is supported
  */
 static bool udc_req_ep(void) {
-    uint8_t   iface_num;
+    uint8_t                     iface_num;
     udi_api_t UDC_DESC_STORAGE *udi_api;
 
     if (0 == udc_num_configuration) {

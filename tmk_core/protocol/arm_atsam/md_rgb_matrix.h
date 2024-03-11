@@ -112,7 +112,7 @@ typedef struct led_setup_s {
 } led_setup_t;
 
 extern const uint8_t led_setups_count;
-extern void *        led_setups[];
+extern void         *led_setups[];
 
 // LED Extra Instructions
 #    define LED_FLAG_NULL 0x00               // Matching and coloring not used (default)

@@ -232,7 +232,7 @@ static void udd_ep_trans_in_next(void *pointer) {
     uint16_t                                ep_size, nb_trans;
     uint16_t                                next_trans;
     udd_ep_id_t                             ep_num;
-    udd_ep_job_t *                          ptr_job;
+    udd_ep_job_t                           *ptr_job;
 
     ptr_job = udd_ep_get_job(ep);
     ep_num  = ep & USB_EP_ADDR_MASK;
@@ -281,7 +281,7 @@ static void udd_ep_trans_out_next(void *pointer) {
     uint16_t                                ep_size, nb_trans;
     uint16_t                                next_trans;
     udd_ep_id_t                             ep_num;
-    udd_ep_job_t *                          ptr_job;
+    udd_ep_job_t                           *ptr_job;
 
     ptr_job = udd_ep_get_job(ep);
     ep_num  = ep & USB_EP_ADDR_MASK;
@@ -923,7 +923,7 @@ static void _usb_device_lpm_suspend(struct usb_module *module_inst, void *pointe
     usb_device_disable_callback(&usb_device, USB_DEVICE_CALLBACK_SUSPEND);
     usb_device_enable_callback(&usb_device, USB_DEVICE_CALLBACK_WAKEUP);
 
-    //#warning Here the sleep mode must be choose to have a DFLL startup time < bmAttribut.HIRD
+    // #warning Here the sleep mode must be choose to have a DFLL startup time < bmAttribut.HIRD
     udd_sleep_mode(UDD_STATE_SUSPEND_LPM); // Enter in LPM SUSPEND mode
     if ((*lpm_wakeup_enable)) {
         UDC_REMOTEWAKEUP_LPM_ENABLE();

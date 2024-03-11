@@ -32,11 +32,11 @@ uint8_t usb_gcr_auto;
 uint16_t adc_extra;
 
 void USB_Hub_init(void) {
-    Gclk *   pgclk = GCLK;
-    Mclk *   pmclk = MCLK;
-    Port *   pport = PORT;
+    Gclk    *pgclk = GCLK;
+    Mclk    *pmclk = MCLK;
+    Port    *pport = PORT;
     Oscctrl *posc  = OSCCTRL;
-    Usb *    pusb  = USB;
+    Usb     *pusb  = USB;
 
     DBGC(DC_USB2422_INIT_BEGIN);
 

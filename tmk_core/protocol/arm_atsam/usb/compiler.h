@@ -59,10 +59,10 @@
 #endif
 
 #include <stddef.h>
-//#include <parts.h>
-//#include <status_codes.h>
-//#include <preprocessor.h>
-//#include <io.h>
+// #include <parts.h>
+// #include <status_codes.h>
+// #include <preprocessor.h>
+// #include <io.h>
 
 #ifndef __ASSEMBLY__
 
@@ -93,7 +93,7 @@
  * \param[in] arg  The pragma directive as it would appear after \e \#pragma
  *             (i.e. not stringified).
  */
-#    define COMPILER_PRAGMA(arg) _Pragma(#    arg)
+#    define COMPILER_PRAGMA(arg) _Pragma(#arg)
 
 /**
  * \def COMPILER_PACK_SET(alignment)
@@ -200,7 +200,7 @@
 #        define NO_INIT __attribute__((section(".no_init")))
 #    endif
 
-//#include "interrupt.h"
+// #include "interrupt.h"
 
 /** \name Usual Types
  * @{ */
@@ -251,98 +251,98 @@ typedef union {
 
 /** Union of pointers to 64-, 32-, 16- and 8-bit unsigned integers. */
 typedef union {
-    int64_t * s64ptr;
+    int64_t  *s64ptr;
     uint64_t *u64ptr;
-    int32_t * s32ptr;
+    int32_t  *s32ptr;
     uint32_t *u32ptr;
-    int16_t * s16ptr;
+    int16_t  *s16ptr;
     uint16_t *u16ptr;
-    int8_t *  s8ptr;
-    uint8_t * u8ptr;
+    int8_t   *s8ptr;
+    uint8_t  *u8ptr;
 } UnionPtr;
 
 /** Union of pointers to volatile 64-, 32-, 16- and 8-bit unsigned integers. */
 typedef union {
-    volatile int64_t * s64ptr;
+    volatile int64_t  *s64ptr;
     volatile uint64_t *u64ptr;
-    volatile int32_t * s32ptr;
+    volatile int32_t  *s32ptr;
     volatile uint32_t *u32ptr;
-    volatile int16_t * s16ptr;
+    volatile int16_t  *s16ptr;
     volatile uint16_t *u16ptr;
-    volatile int8_t *  s8ptr;
-    volatile uint8_t * u8ptr;
+    volatile int8_t   *s8ptr;
+    volatile uint8_t  *u8ptr;
 } UnionVPtr;
 
 /** Union of pointers to constant 64-, 32-, 16- and 8-bit unsigned integers. */
 typedef union {
-    const int64_t * s64ptr;
+    const int64_t  *s64ptr;
     const uint64_t *u64ptr;
-    const int32_t * s32ptr;
+    const int32_t  *s32ptr;
     const uint32_t *u32ptr;
-    const int16_t * s16ptr;
+    const int16_t  *s16ptr;
     const uint16_t *u16ptr;
-    const int8_t *  s8ptr;
-    const uint8_t * u8ptr;
+    const int8_t   *s8ptr;
+    const uint8_t  *u8ptr;
 } UnionCPtr;
 
 /** Union of pointers to constant volatile 64-, 32-, 16- and 8-bit unsigned integers. */
 typedef union {
-    const volatile int64_t * s64ptr;
+    const volatile int64_t  *s64ptr;
     const volatile uint64_t *u64ptr;
-    const volatile int32_t * s32ptr;
+    const volatile int32_t  *s32ptr;
     const volatile uint32_t *u32ptr;
-    const volatile int16_t * s16ptr;
+    const volatile int16_t  *s16ptr;
     const volatile uint16_t *u16ptr;
-    const volatile int8_t *  s8ptr;
-    const volatile uint8_t * u8ptr;
+    const volatile int8_t   *s8ptr;
+    const volatile uint8_t  *u8ptr;
 } UnionCVPtr;
 
 /** Structure of pointers to 64-, 32-, 16- and 8-bit unsigned integers. */
 typedef struct {
-    int64_t * s64ptr;
+    int64_t  *s64ptr;
     uint64_t *u64ptr;
-    int32_t * s32ptr;
+    int32_t  *s32ptr;
     uint32_t *u32ptr;
-    int16_t * s16ptr;
+    int16_t  *s16ptr;
     uint16_t *u16ptr;
-    int8_t *  s8ptr;
-    uint8_t * u8ptr;
+    int8_t   *s8ptr;
+    uint8_t  *u8ptr;
 } StructPtr;
 
 /** Structure of pointers to volatile 64-, 32-, 16- and 8-bit unsigned integers. */
 typedef struct {
-    volatile int64_t * s64ptr;
+    volatile int64_t  *s64ptr;
     volatile uint64_t *u64ptr;
-    volatile int32_t * s32ptr;
+    volatile int32_t  *s32ptr;
     volatile uint32_t *u32ptr;
-    volatile int16_t * s16ptr;
+    volatile int16_t  *s16ptr;
     volatile uint16_t *u16ptr;
-    volatile int8_t *  s8ptr;
-    volatile uint8_t * u8ptr;
+    volatile int8_t   *s8ptr;
+    volatile uint8_t  *u8ptr;
 } StructVPtr;
 
 /** Structure of pointers to constant 64-, 32-, 16- and 8-bit unsigned integers. */
 typedef struct {
-    const int64_t * s64ptr;
+    const int64_t  *s64ptr;
     const uint64_t *u64ptr;
-    const int32_t * s32ptr;
+    const int32_t  *s32ptr;
     const uint32_t *u32ptr;
-    const int16_t * s16ptr;
+    const int16_t  *s16ptr;
     const uint16_t *u16ptr;
-    const int8_t *  s8ptr;
-    const uint8_t * u8ptr;
+    const int8_t   *s8ptr;
+    const uint8_t  *u8ptr;
 } StructCPtr;
 
 /** Structure of pointers to constant volatile 64-, 32-, 16- and 8-bit unsigned integers. */
 typedef struct {
-    const volatile int64_t * s64ptr;
+    const volatile int64_t  *s64ptr;
     const volatile uint64_t *u64ptr;
-    const volatile int32_t * s32ptr;
+    const volatile int32_t  *s32ptr;
     const volatile uint32_t *u32ptr;
-    const volatile int16_t * s16ptr;
+    const volatile int16_t  *s16ptr;
     const volatile uint16_t *u16ptr;
-    const volatile int8_t *  s8ptr;
-    const volatile uint8_t * u8ptr;
+    const volatile int8_t   *s8ptr;
+    const volatile uint8_t  *u8ptr;
 } StructCVPtr;
 
 /** @} */

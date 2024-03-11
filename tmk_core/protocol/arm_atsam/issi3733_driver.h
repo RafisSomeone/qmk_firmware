@@ -59,15 +59,15 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define ISSI3733_CR_SYNC_HIGH_IMP 0xC0 // High Impedance
 
 // PG3: Configuration Register: Open/Short Detection Enable Bit
-//#define ISSI3733_CR_OSD_DISABLE 0x00          //Disable open/short detection
+// #define ISSI3733_CR_OSD_DISABLE 0x00          //Disable open/short detection
 #define ISSI3733_CR_OSD_ENABLE 0x04 // Enable open/short detection
 
 // PG3: Configuration Register: Auto Breath Enable
-//#define ISSI3733_CR_B_EN_PWM 0x00             //PWM Mode Enable
+// #define ISSI3733_CR_B_EN_PWM 0x00             //PWM Mode Enable
 #define ISSI3733_CR_B_EN_AUTO 0x02 // Auto Breath Mode Enable
 
 // PG3: Configuration Register: Software Shutdown Control
-//#define ISSI3733_CR_SSD_SHUTDOWN 0x00         //Software shutdown
+// #define ISSI3733_CR_SSD_SHUTDOWN 0x00         //Software shutdown
 #define ISSI3733_CR_SSD_NORMAL 0x01 // Normal operation
 
 #define ISSI3733_GCCR 0x01 // Global Current Control Register

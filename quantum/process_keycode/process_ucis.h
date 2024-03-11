@@ -29,7 +29,7 @@
 #endif
 
 typedef struct {
-    char *   symbol;
+    char    *symbol;
     uint32_t code_points[UCIS_MAX_CODE_POINTS];
 } ucis_symbol_t;
 

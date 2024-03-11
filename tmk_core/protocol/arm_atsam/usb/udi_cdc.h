@@ -78,8 +78,8 @@ extern UDC_DESC_STORAGE udi_api_t udi_api_cdc_comm;
 extern UDC_DESC_STORAGE udi_api_t udi_api_cdc_data;
 //@}
 
-//#define CDC_ACM_SIZE  64  see usb_protocol_cdc.h
-//#define CDC_RX_SIZE   64
+// #define CDC_ACM_SIZE  64  see usb_protocol_cdc.h
+// #define CDC_RX_SIZE   64
 
 //! CDC communication endpoints size for all speeds
 #    define UDI_CDC_COMM_EP_SIZE CDC_ACM_SIZE
